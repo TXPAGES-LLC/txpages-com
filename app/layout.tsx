@@ -23,12 +23,12 @@ export const metadata: Metadata = {
     'Grow your Texas business with AI-powered SEO, PPC management, web design, and local marketing services. TXPAGES is your complete digital growth partner in Stephenville, TX. Call 254-968-0162.',
   keywords:
     'Texas SEO, Texas PPC, web design Texas, local SEO Texas, digital marketing Texas, TXPAGES, Stephenville TX marketing, AI SEO',
-  metadataBase: new URL(''),
+  metadataBase: new URL('https://txpages.com'),
   alternates: { canonical: '/' },
   openGraph: {
     type: 'website',
     locale: 'en_US',
-    url: '',
+    url: 'https://txpages.com',
     siteName: 'TXPAGES',
     title: 'TXPAGES | Texas AI SEO, PPC & Web Design Services',
     description:
