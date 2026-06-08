@@ -1,0 +1,130 @@
+@import "tailwindcss" source("..");
+@import 'tw-animate-css';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: #0f1530;
+  --foreground: #ccd6f6;
+  --card: #1e2a5e;
+  --card-foreground: #ccd6f6;
+  --popover: #1e2a5e;
+  --popover-foreground: #ccd6f6;
+  --primary: #2ea3f2;
+  --primary-foreground: #ffffff;
+  --secondary: #be1f32;
+  --secondary-foreground: #ffffff;
+  --muted: #1a2454;
+  --muted-foreground: #8892b0;
+  --accent: #974df3;
+  --accent-foreground: #ffffff;
+  --destructive: #be1f32;
+  --destructive-foreground: #ffffff;
+  --border: #2a3870;
+  --input: #2a3870;
+  --ring: #2ea3f2;
+  --radius: 0.5rem;
+
+  /* Brand-specific tokens */
+  --brand-primary: #2ea3f2;
+  --brand-secondary: #be1f32;
+  --brand-tertiary: #974df3;
+  --brand-bg: #212e64;
+  --brand-bg-dark: #181f4a;
+  --brand-bg-deeper: #0f1530;
+  --brand-surface: #1e2a5e;
+  --brand-border: #2a3870;
+  --brand-heading: #ffffff;
+  --brand-body: #ccd6f6;
+  --brand-muted: #8892b0;
+}
+
+@theme inline {
+  --font-sans: var(--font-inter), 'Inter', system-ui, sans-serif;
+  --font-display: var(--font-sora), 'Sora', system-ui, sans-serif;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 2px);
+  --radius-md: var(--radius);
+  --radius-lg: calc(var(--radius) + 4px);
+  --radius-xl: calc(var(--radius) + 8px);
+
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-secondary: var(--brand-secondary);
+  --color-brand-tertiary: var(--brand-tertiary);
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-border: var(--brand-border);
+  --color-brand-heading: var(--brand-heading);
+  --color-brand-body: var(--brand-body);
+  --color-brand-muted: var(--brand-muted);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+    -webkit-text-size-adjust: 100%;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans), system-ui, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display), var(--font-sans), system-ui, sans-serif;
+    color: var(--brand-heading);
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+  }
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+
+/* Accent line utility */
+.accent-line {
+  display: inline-block;
+  width: 3rem;
+  height: 3px;
+  background-color: var(--brand-primary);
+  border-radius: 2px;
+}
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 40px rgba(46, 163, 242, 0.15);
+}
