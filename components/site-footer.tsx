@@ -1,3 +1,5 @@
+import type { ReactNode } from 'react'
+
 const SERVICE_LINKS = [
   { label: 'Website Design & Development', href: '/services/web-design' },
   { label: 'Search Engine Optimization', href: '/services/seo' },
@@ -16,7 +18,7 @@ const COMPANY_LINKS = [
   { label: 'Contact', href: '/contact' },
 ]
 
-const SOCIAL_LINKS: { label: string; href: string }[] = []
+const SOCIAL_LINKS: { label: string; href: string; icon?: ReactNode }[] = []
 
 export default function SiteFooter() {
   const currentYear = new Date().getFullYear()
