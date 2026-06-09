@@ -91,6 +91,8 @@ export default async function OGImage() {
           {/* Headline */}
           <div
             style={{
+              display: 'flex',
+              flexDirection: 'column',
               fontSize: '38px',
               fontWeight: 700,
               color: '#ffffff',
@@ -98,8 +100,7 @@ export default async function OGImage() {
               marginBottom: '16px',
             }}
           >
-            Creating Digital Experiences
-            <br />
+            <span>Creating Digital Experiences</span>
             <span style={{ color: '#2ea3f2' }}>That Drive Growth</span>
           </div>
 
