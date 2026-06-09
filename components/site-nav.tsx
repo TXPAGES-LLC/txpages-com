@@ -5,6 +5,16 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { SERVICES_DATA } from '@/lib/services-data'
 
+const AREAS_DATA = [
+  { label: 'Stephenville, TX', href: '/areas/stephenville-tx' },
+  { label: 'Huntsville, TX', href: '/areas/huntsville-tx' },
+  { label: 'Granbury, TX', href: '/areas/granbury-tx' },
+  { label: 'Highland Lakes, TX', href: '/areas/highland-lakes-tx' },
+  { label: 'Brownwood, TX', href: '/areas/brownwood-tx' },
+  { label: 'Temple, TX', href: '/areas/temple-tx' },
+  { label: 'Abilene, TX', href: '/areas/abilene-tx' },
+]
+
 const SERVICE_ICONS: Record<string, ReactElement> = {
   'web-design': (
     <svg className="w-4 h-4 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -50,8 +60,11 @@ export default function SiteNav() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [servicesOpen, setServicesOpen] = useState(false)
+  const [areasOpen, setAreasOpen] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [mobileAreasOpen, setMobileAreasOpen] = useState(false)
   const dropdownRef = useRef<HTMLLIElement>(null)
+  const areasDropdownRef = useRef<HTMLLIElement>(null)
   const pathname = usePathname()
 
   useEffect(() => {
@@ -60,11 +73,14 @@ export default function SiteNav() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
-  // Close dropdown on outside click
+  // Close dropdowns on outside click
   useEffect(() => {
     const handler = (e: MouseEvent) => {
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setServicesOpen(false)
+      }
+      if (areasDropdownRef.current && !areasDropdownRef.current.contains(e.target as Node)) {
+        setAreasOpen(false)
       }
     }
     document.addEventListener('mousedown', handler)
@@ -75,6 +91,7 @@ export default function SiteNav() {
   useEffect(() => {
     setMenuOpen(false)
     setMobileServicesOpen(false)
+    setMobileAreasOpen(false)
   }, [pathname])
 
   const isOnHomepage = pathname === '/'
@@ -190,6 +207,57 @@ export default function SiteNav() {
             )}
           </li>
 
+          {/* Areas We Serve dropdown */}
+          <li ref={areasDropdownRef} className="relative">
+            <button
+              onClick={() => setAreasOpen((v) => !v)}
+              onMouseEnter={() => setAreasOpen(true)}
+              className="flex items-center gap-1 px-3 py-2 text-sm font-medium text-[#1e2a5e] hover:text-[#2ea3f2] transition-colors duration-200 rounded-md hover:bg-[#2ea3f2]/10 cursor-pointer"
+              aria-expanded={areasOpen}
+              aria-haspopup="true"
+              aria-controls="areas-dropdown"
+            >
+              Areas We Serve
+              <svg
+                className={`w-3.5 h-3.5 transition-transform duration-200 ${areasOpen ? 'rotate-180' : ''}`}
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                aria-hidden="true"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+              </svg>
+            </button>
+
+            {areasOpen && (
+              <div
+                id="areas-dropdown"
+                role="menu"
+                aria-label="Areas We Serve submenu"
+                className="absolute top-full left-1/2 -translate-x-1/2 mt-2 w-64 rounded-xl border border-gray-200 bg-white shadow-2xl p-2"
+                onMouseLeave={() => setAreasOpen(false)}
+              >
+                {AREAS_DATA.map((area) => (
+                  <Link
+                    key={area.href}
+                    href={area.href}
+                    role="menuitem"
+                    onClick={() => setAreasOpen(false)}
+                    className="flex items-center gap-2.5 rounded-lg px-3 py-2.5 hover:bg-[#2ea3f2]/10 transition-colors group"
+                  >
+                    <svg className="w-3.5 h-3.5 text-[#2ea3f2] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                    </svg>
+                    <span className="text-sm font-medium text-[#1e2a5e] group-hover:text-[#2ea3f2] transition-colors">
+                      {area.label}
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            )}
+          </li>
+
           {OTHER_NAV_LINKS.map((link) => (
             <li key={link.href}>
               {isOnHomepage && link.href.startsWith('/#') ? (
@@ -286,6 +354,45 @@ export default function SiteNav() {
                           {SERVICE_ICONS[service.slug]}
                         </span>
                         {service.shortTitle}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              )}
+            </li>
+
+            {/* Mobile Areas accordion */}
+            <li>
+              <button
+                onClick={() => setMobileAreasOpen((v) => !v)}
+                className="w-full flex items-center justify-between px-4 py-3 text-base font-medium text-[#1e2a5e] hover:text-[#2ea3f2] hover:bg-[#2ea3f2]/10 rounded-md transition-colors cursor-pointer"
+                aria-expanded={mobileAreasOpen}
+              >
+                Areas We Serve
+                <svg
+                  className={`w-4 h-4 transition-transform duration-200 ${mobileAreasOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden="true"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+              {mobileAreasOpen && (
+                <ul className="mt-1 ml-4 flex flex-col gap-0.5 border-l border-gray-200 pl-4" role="list">
+                  {AREAS_DATA.map((area) => (
+                    <li key={area.href}>
+                      <Link
+                        href={area.href}
+                        className="flex items-center gap-2.5 px-3 py-2.5 text-sm text-gray-600 hover:text-[#2ea3f2] rounded-md hover:bg-[#2ea3f2]/10 transition-colors"
+                        onClick={() => setMenuOpen(false)}
+                      >
+                        <svg className="w-3.5 h-3.5 text-[#2ea3f2] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        {area.label}
                       </Link>
                     </li>
                   ))}

@@ -3,21 +3,21 @@ const TESTIMONIALS = [
     quote:
       'TXPAGES rebuilt our website and took over our SEO. Within four months we were ranking on the first page for every service we offer in our area. The phone just started ringing more.',
     name: 'James R.',
-    role: 'Owner, Stephenville HVAC Services',
+    role: 'Owner, Local HVAC Services',
     stars: 5,
   },
   {
     quote:
       'Before TXPAGES, we had almost no online presence. Now our Google Business profile gets hundreds of views a month, and we have seen a 40% increase in new customer calls. Worth every penny.',
     name: 'Maria T.',
-    role: 'Co-Owner, Erath County Family Dental',
+    role: 'Co-Owner, Family Dental Practice',
     stars: 5,
   },
   {
     quote:
       'They manage our entire digital marketing — PPC, SEO, social. We get a monthly report that actually makes sense. I finally feel like I have a partner who understands small business in Texas.',
     name: 'David K.',
-    role: 'Owner, Central Texas Auto Repair',
+    role: 'Owner, Independent Auto Repair',
     stars: 5,
   },
   {
@@ -110,9 +110,9 @@ export default function TestimonialsSection() {
           <div className="h-5 w-px bg-[#2a3870] hidden md:block" aria-hidden="true" />
           <span className="text-sm text-[#8892b0]">500+ Texas Businesses Served</span>
           <div className="h-5 w-px bg-[#2a3870] hidden md:block" aria-hidden="true" />
-          <span className="text-sm text-[#8892b0]">Google Partner Certified</span>
+          <span className="text-sm text-[#8892b0]">Locally Owned &amp; Operated</span>
           <div className="h-5 w-px bg-[#2a3870] hidden md:block" aria-hidden="true" />
-          <span className="text-sm text-[#8892b0]">BBB Accredited</span>
+          <span className="text-sm text-[#8892b0]">Serving Texas Since 2009</span>
         </div>
       </div>
     </section>

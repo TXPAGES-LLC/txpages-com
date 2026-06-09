@@ -1,5 +1,4 @@
-export const BLOG_DATA_URL =
-  'https://raw.githubusercontent.com/TXPAGES-LLC/txpages-com/main/lib/blog/posts.json'
+import localData from './posts.json'
 
 export interface BlogPost {
   slug: string
@@ -34,14 +33,7 @@ export interface BlogData {
 }
 
 export async function fetchBlogData(): Promise<BlogData> {
-  try {
-    const res = await fetch(BLOG_DATA_URL, { cache: 'no-store' })
-    if (!res.ok) return { collection: { title: 'Blog', navLabel: 'Blog', basePath: '/blog' }, posts: [] }
-    const data: BlogData = await res.json()
-    return data
-  } catch {
-    return { collection: { title: 'Blog', navLabel: 'Blog', basePath: '/blog' }, posts: [] }
-  }
+  return localData as BlogData
 }
 
 /** Returns only posts whose publishAt is <= now, sorted newest first */

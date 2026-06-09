@@ -4,45 +4,51 @@ import { useEffect } from 'react'
 
 export default function ContactSection() {
   useEffect(() => {
-    // Load JotForm Feedback (lightbox) script
-    if (!document.querySelector('script[src*="feedback2.js"]')) {
-      const s1 = document.createElement('script')
-      s1.src = 'https://cdn.jotfor.ms/s/static/latest/static/feedback2.js'
-      s1.type = 'text/javascript'
-      s1.async = true
-      s1.onload = () => {
-        if (typeof (window as any).JotformFeedback !== 'undefined') {
-          new (window as any).JotformFeedback({
-            formId: '261336073414047',
-            base: 'https://form.jotform.com/',
-            windowTitle: 'Contact Us – TXPAGES.com',
-            backgroundColor: '#212e64',
-            fontColor: '#FFFFFF',
-            type: '0',
-            height: 500,
-            width: 700,
-            openOnLoad: false,
-          })
-        }
+    const initFeedback = () => {
+      if (typeof (window as any).JotformFeedback !== 'undefined') {
+        new (window as any).JotformFeedback({
+          formId: '261336073414047',
+          base: 'https://form.jotform.com/',
+          windowTitle: 'Contact Us – TXPAGES.com',
+          backgroundColor: '#212e64',
+          fontColor: '#FFFFFF',
+          type: '0',
+          height: 500,
+          width: 700,
+          openOnLoad: false,
+        })
       }
-      document.body.appendChild(s1)
     }
 
-    // Load embed handler
-    if (!document.querySelector('script[src*="for-form-embed-handler"]')) {
-      const s2 = document.createElement('script')
-      s2.src = 'https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js'
-      s2.async = true
-      s2.onload = () => {
-        if (typeof (window as any).jotformEmbedHandler !== 'undefined') {
-          ;(window as any).jotformEmbedHandler(
-            "iframe[id='261336073414047']",
-            'https://form.jotform.com/'
-          )
-        }
+    const loadScript = (src: string, onload?: () => void) => {
+      // Reuse existing script tag but always re-run onload logic
+      const existing = document.querySelector(`script[src="${src}"]`)
+      if (existing) {
+        onload?.()
+        return
       }
-      document.body.appendChild(s2)
+      const s = document.createElement('script')
+      s.src = src
+      s.async = true
+      if (onload) s.onload = onload
+      document.body.appendChild(s)
     }
+
+    // Load feedback2.js first, then embed handler, then init
+    loadScript(
+      'https://cdn.jotfor.ms/s/static/latest/static/feedback2.js',
+      () => {
+        initFeedback()
+        loadScript('https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js', () => {
+          if (typeof (window as any).jotformEmbedHandler !== 'undefined') {
+            ;(window as any).jotformEmbedHandler(
+              "iframe[id='261336073414047']",
+              'https://form.jotform.com/'
+            )
+          }
+        })
+      }
+    )
   }, [])
 
   return (
@@ -108,13 +114,30 @@ export default function ContactSection() {
                 </div>
                 <div>
                   <div className="text-xs text-[#8892b0] uppercase tracking-wider">Local Office</div>
-                  <address className="text-[#ccd6f6] not-italic leading-relaxed">
-                    164 N Graham<br />
-                    Stephenville, TX 76401
-                  </address>
+                  <a
+                    href="https://maps.google.com/?cid=905136393401498971"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="View TXPAGES on Google Maps"
+                    className="hover:text-[#2ea3f2] transition-colors"
+                  >
+                    <address className="text-[#ccd6f6] not-italic leading-relaxed">
+                      164 N Graham<br />
+                      Stephenville, TX 76401
+                    </address>
+                  </a>
                   <div className="text-xs text-[#8892b0] mt-1">
                     Mailing: PO Box 294, Cranfills Gap, TX 76637
                   </div>
+                  <a
+                    href="https://maps.google.com/?cid=905136393401498971"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-block mt-2 text-xs font-semibold text-[#2ea3f2] hover:underline"
+                    aria-label="Find TXPAGES on Google Business Profile"
+                  >
+                    Find us on Google Maps
+                  </a>
                 </div>
               </div>
 

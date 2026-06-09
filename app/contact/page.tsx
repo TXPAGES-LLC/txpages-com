@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import SiteNav from '@/components/site-nav'
 import SiteFooter from '@/components/site-footer'
 import ContactSection from '@/components/contact-section'
+import VerifiedProfiles from '@/components/verified-profiles'
 
 export const metadata: Metadata = {
   title: 'Contact TXPAGES | Free Texas Business Visibility Report | 254-968-0162',
@@ -44,6 +45,7 @@ export default function ContactPage() {
         </div>
 
         <ContactSection />
+        <VerifiedProfiles />
       </main>
       <SiteFooter />
     </>

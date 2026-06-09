@@ -24,9 +24,9 @@ const FAQS = [
       'Pricing varies based on your goals, competition, and the services selected. We offer customized packages rather than rigid tiers so you only pay for what you need. Contact us for a free discovery call and visibility report — there is no obligation.',
   },
   {
-    question: 'Can TXPAGES manage my Google Business Profile and local listings?',
+    question: 'Can TXPAGES manage my Google Business Profile, reputation, and local listings?',
     answer:
-      'Absolutely. Local SEO and listings management is one of our core services. We optimize your Google Business Profile, build consistent citations across 50+ directories, and manage ongoing updates to ensure your business information is accurate and competitive.',
+      'Absolutely. Local SEO, listings management, and reputation management are core services we provide together. We optimize your Google Business Profile, build consistent citations across 50+ directories, implement a review generation strategy, and monitor your online reputation — so your business information stays accurate and your star rating stays strong.',
   },
   {
     question: 'Do you lock clients into long-term contracts?',

@@ -1,0 +1,53 @@
+# TXPAGES — Texas Digital Marketing Agency
+# https://txpages.com
+# llms.txt — AI-readable site guide
+
+## About
+TXPAGES LLC is a Texas-based digital marketing agency providing SEO, PPC, web design, local listings management, content marketing, and reporting services for small and mid-sized businesses across Texas. Based in Stephenville, TX.
+
+## Key Pages
+
+- https://txpages.com/ — Homepage: Overview of TXPAGES services, hero, service highlights, and FAQ.
+- https://txpages.com/why-txpages — Why TXPAGES: Local expertise, AI-powered strategies, transparent pricing, and no lock-in contracts.
+- https://txpages.com/process — Our Process: Step-by-step discovery, strategy, execution, and reporting workflow.
+- https://txpages.com/contact — Contact: JotForm lightbox, phone, address, and verified business profiles.
+
+## Services
+
+- https://txpages.com/services/seo — Search Engine Optimization for Texas businesses.
+- https://txpages.com/services/ppc — Pay-Per-Click advertising and Google Ads management.
+- https://txpages.com/services/web-design — Custom website design, development, and hosting.
+- https://txpages.com/services/local-seo — Local SEO, Google Business Profile, and directory management.
+- https://txpages.com/services/content-marketing — Content strategy, blog writing, and content marketing.
+- https://txpages.com/services/reporting-support — Monthly reporting, analytics, and ongoing support.
+
+## Areas We Serve
+
+- https://txpages.com/areas/stephenville-tx — Digital marketing services in Stephenville, TX (Erath County).
+- https://txpages.com/areas/huntsville-tx — Digital marketing services in Huntsville, TX (Walker County).
+- https://txpages.com/areas/granbury-tx — Digital marketing services in Granbury, TX (Hood County).
+- https://txpages.com/areas/highland-lakes-tx — Digital marketing services in Highland Lakes, TX (Burnet/Llano County).
+- https://txpages.com/areas/brownwood-tx — Digital marketing services in Brownwood, TX (Brown County).
+- https://txpages.com/areas/temple-tx — Digital marketing services in Temple, TX (Bell County).
+- https://txpages.com/areas/abilene-tx — Digital marketing services in Abilene, TX (Taylor County).
+
+## Blog
+
+- https://txpages.com/blog — Blog index: Digital marketing tips, SEO guides, and Texas business resources.
+- https://txpages.com/blog/how-texas-small-businesses-can-dominate-local-search-2025 — How Texas Small Businesses Can Dominate Local Search in 2025: GBP optimization, reputation management, citations, and mobile performance.
+- https://txpages.com/blog/complete-guide-google-ads-texas-service-businesses — The Complete Guide to Google Ads for Texas Service Businesses: match types, negative keywords, landing pages, bid strategies, and conversion tracking.
+- https://txpages.com/blog/7-web-design-mistakes-killing-texas-business-conversions — 7 Web Design Mistakes Killing Your Texas Business Conversions: CTAs, mobile speed, trust signals, and social proof.
+
+## Legal
+
+- https://txpages.com/privacy-policy — Privacy Policy for TXPAGES LLC.
+- https://txpages.com/terms-of-service — Terms of Service for TXPAGES LLC.
+
+## Contact
+
+TXPAGES LLC
+164 N Graham, Stephenville, TX 76401
+Mailing: PO Box 294, Cranfills Gap, TX 76637
+Phone: 254-968-0162
+Email: info@txpages.com
+Google Business Profile: https://maps.google.com/?cid=905136393401498971

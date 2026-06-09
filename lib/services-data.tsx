@@ -128,7 +128,7 @@ export const SERVICES_DATA: ServiceData[] = [
     heroSubheading:
       'Appear at the top of Google Maps and local search results when Texas customers search for businesses like yours. We handle every citation, listing, and review strategy.',
     benefits: [
-      { heading: 'Google Business Profile Optimization', body: 'We fully optimize your GBP — categories, photos, posts, Q&A, and service areas — to maximize visibility in the local Map Pack.' },
+      { heading: 'Google Business Profile Optimization & Reputation Management', body: 'We fully optimize your GBP — categories, photos, posts, Q&A, and service areas — and actively manage your online reputation so your business earns and maintains the five-star presence that wins clicks in the local Map Pack.' },
       { heading: 'Citation Building & Cleanup', body: 'Consistent NAP (Name, Address, Phone) data across 50+ major directories signals trust to Google and improves local rankings.' },
       { heading: 'Review Generation Strategy', body: 'More 5-star reviews mean more clicks and more customers. We implement proven review request workflows for your business.' },
       { heading: 'Hyper-Local Content', body: 'Location-specific landing pages and content targeting Texas cities and neighborhoods you serve drive local organic traffic.' },

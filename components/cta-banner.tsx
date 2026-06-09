@@ -17,7 +17,7 @@ export default function CTABanner() {
         </p>
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
           <a
-            href="#contact"
+            href="/contact"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-md font-bold text-base text-[#2ea3f2] hover:text-[#1a8ed9] transition-colors"
             style={{ backgroundColor: '#ffffff' }}
             aria-label="Get your free Texas business visibility report from TXPAGES"

@@ -6,7 +6,7 @@ const POSTS = [
       'Local SEO has never been more important. Here are the exact strategies TXPAGES uses to put Texas businesses at the top of Google Maps and local search results.',
     date: 'May 8, 2025',
     readTime: '5 min read',
-    href: '/blog',
+    href: '/blog/how-texas-small-businesses-can-dominate-local-search-2025',
     color: '#2ea3f2',
   },
   {
@@ -16,7 +16,7 @@ const POSTS = [
       'Learn how to set up, optimize, and scale Google Ads campaigns that generate qualified leads — without wasting your budget on the wrong clicks.',
     date: 'April 22, 2025',
     readTime: '7 min read',
-    href: '/blog',
+    href: '/blog/complete-guide-google-ads-texas-service-businesses',
     color: '#be1f32',
   },
   {
@@ -26,7 +26,7 @@ const POSTS = [
       'Most local business websites lose leads before visitors even read a word. Discover the most common design errors and how to fix them fast.',
     date: 'April 10, 2025',
     readTime: '4 min read',
-    href: '/blog',
+    href: '/blog/7-web-design-mistakes-killing-texas-business-conversions',
     color: '#974df3',
   },
 ]
@@ -72,8 +72,7 @@ export default function BlogSection() {
           {POSTS.map((post) => (
             <article
               key={post.title}
-              className="group rounded-xl border border-[#2a3870] bg-[#1e2a5e] overflow-hidden card-lift flex flex-col"
-              aria-label={`Blog post: ${post.title}`}
+              className="group relative rounded-xl border border-[#2a3870] bg-[#1e2a5e] overflow-hidden card-lift flex flex-col"
             >
               {/* Category strip */}
               <div className="h-1 w-full" style={{ backgroundColor: post.color }} aria-hidden="true" />
@@ -90,21 +89,27 @@ export default function BlogSection() {
                 </div>
 
                 <h3
-                  className="text-base font-bold text-white mb-3 group-hover:text-[#2ea3f2] transition-colors leading-snug flex-1"
+                  className="text-base font-bold text-white mb-3 leading-snug flex-1"
                   style={{ fontFamily: 'var(--font-display)' }}
                 >
-                  {post.title}
+                  {/* Stretched link — covers the entire card */}
+                  <a
+                    href={post.href}
+                    className="group-hover:text-[#2ea3f2] transition-colors focus-visible:outline-none after:absolute after:inset-0"
+                    aria-label={`Read the full article: ${post.title}`}
+                  >
+                    {post.title}
+                  </a>
                 </h3>
 
                 <p className="text-sm text-[#8892b0] leading-relaxed mb-5">{post.excerpt}</p>
 
                 <div className="flex items-center justify-between mt-auto pt-4 border-t border-[#2a3870]">
                   <span className="text-xs text-[#8892b0]">{post.date}</span>
-                  <a
-                    href={post.href}
-                    className="inline-flex items-center gap-1 text-xs font-bold transition-colors"
+                  <span
+                    className="inline-flex items-center gap-1 text-xs font-bold"
                     style={{ color: post.color }}
-                    aria-label={`Read the full article: ${post.title}`}
+                    aria-hidden="true"
                   >
                     Read More
                     <svg
@@ -112,11 +117,10 @@ export default function BlogSection() {
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
-                      aria-hidden="true"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                     </svg>
-                  </a>
+                  </span>
                 </div>
               </div>
             </article>

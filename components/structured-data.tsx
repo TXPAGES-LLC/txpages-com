@@ -4,7 +4,7 @@ export default function StructuredData() {
     '@type': 'Organization',
     name: 'TXPAGES',
     alternateName: 'Texas AI SEO, PPC & Web Design Services',
-    url: '',
+    url: 'https://txpages.com',
     logo: 'https://txpages.com/wp-content/uploads/2025/04/new-logo.png',
     description:
       'TXPAGES is a Texas digital marketing agency providing AI-powered SEO, PPC management, web design, local SEO, and content marketing services for small and mid-sized Texas businesses.',
@@ -22,9 +22,10 @@ export default function StructuredData() {
       name: 'Texas',
     },
     sameAs: [
-      'https://www.facebook.com/txpages',
-      'https://www.linkedin.com/company/txpages',
-      'https://twitter.com/txpages',
+      'https://maps.google.com/?cid=905136393401498971',
+      'https://www.bing.com/maps?ss=ypid.YN873x6875504846262281297&mkt=en-US',
+      'https://www.yellowpages.com/stephenville-tx/mip/txpages-559622860',
+      'https://www.superpages.com/stephenville-tx/bpp/txpages-559622860',
     ],
     hasOfferCatalog: {
       '@type': 'OfferCatalog',
@@ -43,25 +44,19 @@ export default function StructuredData() {
     '@context': 'https://schema.org',
     '@type': 'WebSite',
     name: 'TXPAGES — Texas Digital Marketing Agency',
-    url: '',
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: '/search?q={search_term_string}',
-      },
-      'query-input': 'required name=search_term_string',
-    },
+    url: 'https://txpages.com',
+
   }
 
   const localBusinessSchema = {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
-    '@id': '/#localbusiness',
+    '@id': 'https://maps.google.com/?cid=905136393401498971',
     name: 'TXPAGES',
+    hasMap: 'https://maps.google.com/?cid=905136393401498971',
     description:
       'Texas digital marketing agency specializing in AI-powered SEO, PPC, web design, and local marketing for Texas small and mid-sized businesses.',
-    url: '',
+    url: 'https://txpages.com',
     telephone: '+1-254-968-0162',
     image: 'https://txpages.com/wp-content/uploads/2025/04/new-logo.png',
     priceRange: '$$',
@@ -86,12 +81,7 @@ export default function StructuredData() {
         closes: '17:00',
       },
     ],
-    aggregateRating: {
-      '@type': 'AggregateRating',
-      ratingValue: '4.9',
-      reviewCount: '87',
-      bestRating: '5',
-    },
+
   }
 
   const faqSchema = {

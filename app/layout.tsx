@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next'
 import { Inter, Sora } from 'next/font/google'
 import { Analytics } from '@vercel/analytics/next'
 import ScrollToTop from '@/components/scroll-to-top'
+import { GTMScript, GTMNoScript } from '@/components/google-tag-manager'
 import './globals.css'
 
 const inter = Inter({
@@ -18,7 +19,10 @@ const sora = Sora({
 })
 
 export const metadata: Metadata = {
-  title: 'TXPAGES | Texas AI SEO, PPC & Web Design Services | Stephenville, TX',
+  title: {
+    default: 'TXPAGES | Texas AI SEO, PPC & Web Design Services | Stephenville, TX',
+    template: '%s | TXPAGES',
+  },
   description:
     'Grow your Texas business with AI-powered SEO, PPC management, web design, and local marketing services. TXPAGES is your complete digital growth partner in Stephenville, TX. Call 254-968-0162.',
   keywords:
@@ -69,6 +73,8 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${inter.variable} ${sora.variable} bg-background`}>
       <body className="font-sans antialiased">
+        <GTMScript />
+        <GTMNoScript />
         <ScrollToTop />
         {children}
         {process.env.NODE_ENV === 'production' && <Analytics />}
