@@ -1,23 +1,20 @@
 import { ImageResponse } from 'next/og'
+import { readFileSync } from 'fs'
+import { join } from 'path'
 
-export const runtime = 'edge'
+// Remove edge runtime so we can use Node fs to read the local banner image
 export const alt = 'TXPAGES — Texas Digital Marketing Agency'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
 export default async function OGImage() {
-  // Fetch the hero banner and convert to base64 for use in ImageResponse
-  const bannerUrl = new URL('/txpages-home-page-banner.png', 'https://txpages.com')
+  // Read the banner from the local public directory — no network request needed
   let bannerSrc: string | null = null
   try {
-    const res = await fetch(bannerUrl.toString())
-    if (res.ok) {
-      const buf = await res.arrayBuffer()
-      const b64 = Buffer.from(buf).toString('base64')
-      bannerSrc = `data:image/png;base64,${b64}`
-    }
+    const buf = readFileSync(join(process.cwd(), 'public', 'txpages-home-page-banner.png'))
+    bannerSrc = `data:image/png;base64,${buf.toString('base64')}`
   } catch {
-    // Falls back to gradient background below
+    // Falls back to navy background if the file is missing
   }
 
   return new ImageResponse(
