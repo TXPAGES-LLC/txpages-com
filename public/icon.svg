@@ -1,0 +1,19 @@
+<svg width="180" height="180" viewBox="0 0 180 180" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="180" height="180" rx="40" fill="#1e2a5e"/>
+  <!-- Star: 5-pointed, centered at 90,88, outer radius 68, inner radius 28 -->
+  <polygon
+    points="
+      90,20
+      103.5,64
+      150,64
+      113,90
+      126.5,134
+      90,108
+      53.5,134
+      67,90
+      30,64
+      76.5,64
+    "
+    fill="#f5a623"
+  />
+</svg>

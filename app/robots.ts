@@ -10,6 +10,5 @@ export default function robots(): MetadataRoute.Robots {
       },
     ],
     sitemap: 'https://txpages.com/sitemap.xml',
-    host: 'https://txpages.com',
   }
 }
