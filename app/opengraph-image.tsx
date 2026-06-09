@@ -126,7 +126,7 @@ export default async function OGImage() {
               border: '1px solid rgba(46,163,242,0.4)',
               borderRadius: '999px',
               padding: '10px 22px',
-              width: 'fit-content',
+              width: 'auto',
             }}
           >
             <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#2ea3f2' }} />
