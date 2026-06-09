@@ -39,10 +39,10 @@ export const metadata: Metadata = {
       'Complete digital marketing services for Texas businesses — SEO, PPC, web design, local listings, and content marketing.',
     images: [
       {
-        url: 'https://txpages.com/wp-content/uploads/2025/04/new-logo.png',
+        url: '/opengraph-image',
         width: 1200,
         height: 630,
-        alt: 'TXPAGES Texas Digital Marketing Agency',
+        alt: 'TXPAGES — Texas Digital Marketing Agency',
       },
     ],
   },
